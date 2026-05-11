@@ -126,7 +126,11 @@ function openPost(p, index) {
 
             <p>${p.desc}</p>
 
+<<<<<<< HEAD
             <div class="post-body">${p.body}</div>
+=======
+            <div>${p.body}</div>
+>>>>>>> 695aa264ac51616a6105d852a5c9f18a720b34c9
 
             ${isAdmin ? `
                 <hr>
