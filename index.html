@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lighthouse Logs</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ LaTeX RENDERING -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!-- CLOUDS -->
+    <div class="cloud"></div>
+    <div class="cloud two"></div>
+    <div class="cloud three"></div>
+
+    <!-- LIGHTHOUSE -->
+    <div class="lighthouse-frame">
+        <img src="lighthouse.jpg" alt="lighthouse">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <h1>Lighthouse Logs</h1>
+        <div class="subtitle">— smiles, the lighthouse keeper —</div>
+
+        <div class="timeline" id="timeline"></div>
+
+        <div class="footer">— built by smiles —</div>
+
+    </div>
+
+    <!-- + BUTTON -->
+    <button class="add-btn" onclick="openModal()">+</button>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">✕</span>
+
+            <!-- LOGIN -->
+            <div id="loginBox">
+                <h3>Enter Lighthouse</h3>
+                <input id="user" placeholder="username">
+                <input id="pass" type="password" placeholder="password">
+                <button onclick="login()">Enter</button>
+            </div>
+
+            <!-- POST CREATION (FIXED FOR LATEX) -->
+            <div id="postBox" style="display:none;">
+                <input id="title" placeholder="title">
+                <input id="desc" placeholder="description">
+
+                <!-- ⚠️ IMPORTANT CHANGE -->
+                <!-- now plain text / LaTeX input instead of HTML editor -->
+                <textarea id="body" class="editor" placeholder="Write LaTeX or text here..."></textarea>
+
+                <button onclick="submitPost()">Post</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SPOTLIGHT OVERLAY -->
+    <div class="spotlight-overlay" id="spotlight"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
