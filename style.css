@@ -267,3 +267,7 @@ body.spotlight .container {
     overflow-wrap: break-word;
     word-break: normal;
 }
+
+.post-body {
+    white-space: normal;
+}

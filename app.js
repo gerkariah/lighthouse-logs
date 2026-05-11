@@ -81,7 +81,7 @@ function login() {
 function submitPost() {
     const title = document.getElementById("title").value;
     const desc = document.getElementById("desc").value;
-    const body = document.getElementById("body").innerHTML;
+    const body = document.getElementById("body").innerHTML.trim();
 
     posts.unshift({
         title,
@@ -90,7 +90,7 @@ function submitPost() {
         date: new Date().toISOString()
     });
 
-    savePosts();       // ✅ SAVE HERE
+    savePosts();
     renderPosts();
     closeModal();
 }
@@ -124,13 +124,11 @@ function openPost(p, index) {
                 ${new Date(p.date).toLocaleString()}
             </small>
 
-            <p>${p.desc}</p>
+            <p class="post-desc">${p.desc || ""}</p>
 
-<<<<<<< HEAD
-            <div class="post-body">${p.body}</div>
-=======
-            <div>${p.body}</div>
->>>>>>> 695aa264ac51616a6105d852a5c9f18a720b34c9
+            <div class="post-body">
+                ${p.body || ""}
+            </div>
 
             ${isAdmin ? `
                 <hr>
